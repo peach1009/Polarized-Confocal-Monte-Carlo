@@ -110,7 +110,7 @@ if isempty(gcp('nocreate'))
     parpool('local', 4);
 end
 
-outputDir = "";   % base output folder ("" = current folder)
+outputDir = pwd;   % base output folder (pwd = current folder)
 runTag = 'run_1'; % appended to every output file name
 
 parfor idepth = 1:nDepth
