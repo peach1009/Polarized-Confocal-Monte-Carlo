@@ -218,18 +218,19 @@ parfor idepth = 1:nDepth
                     end
 
                     %---------------- Birefringence ----------------
-                    phi=atan2(U(2),U(1)); %position of meridian 
+                    phi=atan2(U(2),U(1)); % position of meridian plane 
 
-                    %calculate distance to the cylinder in angles
+                    % Fiber axis angle in photon meridian frame. Frame of upward traveling photon is mirrored, so sign is flipped. 
+                    % Only for fibers in x-y plane
                     if U(3) >= 0
                         beta = gamma - phi; % going into the tissue (down)
                     else
                         beta = phi - gamma; % coming back out (up)
                     end
 
-                    S2= rotSphi(S, beta); % stokes vector is in meridian plane of the cylinder
+                    S2= rotSphi(S, beta); % stokes vector in the fiber axis frame
 
-                    %Now calculate the incident angle of the U to cylinder*/
+                    %Now calculate the incident angle of the U to fiber*/
                     if  dot(CC,U)==0
                         csi=pi/2;
                     else
