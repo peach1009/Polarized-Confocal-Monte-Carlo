@@ -45,7 +45,7 @@ nre_med = 1.33;  % medium RI (must set before foc_list)
 
 % Base output directory ('' = current folder), where D1,2,..DN depth
 % folders are generated 
-baseDir = ''; % folder for output files 
+baseDir = pwd; % folder for output files (pwd = current folder path)
 depth_um = [0 100 200 300 400 500 600]; % [µm] focus depths
 Fdepth_cm = depth_um * 1e-4;            % [cm] 1 µm = 1e-4 cm
 obj_gap_ref = 3.4; % [cm] objective gap with the focus at the surface
